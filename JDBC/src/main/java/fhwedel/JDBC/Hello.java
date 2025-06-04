@@ -43,5 +43,16 @@ public class Hello {
                 "delete FROM personal where  name = 'Tietze' and vorname = 'Lutz';")){
             ResultSet resultSet = statement.executeQuery();
         }
+
+        //Aufgabe 6
+        try (PreparedStatement statement = connection.prepareStatement(
+                "select personal.name, personal.vorname from personal " +
+                        "join abteilung where abteilung.name = 'verkauf';")){
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                System.out.print(resultSet.getString("name") + " ");
+                System.out.print(resultSet.getString("vorname") + "\n");
+            }
+        }
     }
 }
