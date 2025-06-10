@@ -8,7 +8,8 @@ public class Main {
     static Connection createConnection() throws SQLException {
         //Aufgabe 1
         return DriverManager.getConnection(
-                "jdbc:mariadb://192.168.64.2:3306/firma",
+                //"jdbc:mariadb://192.168.64.2:3306/firma",
+                "jdbc:mariadb://192.168.56.102:3306/firma",
                 "user", "user"
         );
     }
